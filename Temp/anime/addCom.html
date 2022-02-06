@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block body %}
+<div class="container">
+<form method="post"> {% csrf_token %}
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Add Comment</label>
+  <textarea name="Content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<button class="btn btn-outline-dark my-2" type="submit">Add Comment</button>
+</form>
+{% for c in commen %}
+<div class="row my-3">
+      <div class="col-md-1">
+        <!-- start -->
+        <img src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/60/000000/external-user-interface-kiranshastry-gradient-kiranshastry.png"/>
+        <!-- end -->
+     
+      </div>
+      <div class="col-md-11"> <b>
+      {{c.user}} </b> says at {{c.time |naturaltime }}<br> {{c.content}}
+    <div class="reply mx-0">
+      
+    </div>
+    </div>
+    {% endfor %}
+</div>{% endblock body %}

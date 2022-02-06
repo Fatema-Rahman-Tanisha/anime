@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">name</label>
+  <input type="text" name="name" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">genre</label>
+  <input type="text" name="genre" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">type</label>
+  <input type="text" name="type" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">playlist</label>
+  <textarea name="playlist" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">detail</label>
+  <textarea name="detail" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">poster</label>
+  <textarea name="poster" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+</div>
+<button type="submit">submit</button>
+</form>
+{% endblock body %}

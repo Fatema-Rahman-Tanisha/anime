@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}<div class="container my-3 d-flex flex-wrap">
+ {% for anime in animes %}
+
+<div class="card" style="width: 16rem; margin: 20px;">
+  <img  src="{{anime.poster}}"  class="card-img-top" alt="...">
+  <div class="card-body">
+
+    <h5 class="card-title">{{anime.name}}</h5>
+     <div class="card-footer text-muted">
+     jonra : {{anime.jonra}}
+  </div>
+  
+
+    <p class="card-text">{{anime.details| truncatechars:100}}</p>
+    <a href="/anime/watch/{{anime.slug}}" class="btn btn-primary">Watch now</a>
+   
+  </div>
+</div>
+
+
+
+{% endfor %}
+</div>  </div>
+
+{% endblock body %}

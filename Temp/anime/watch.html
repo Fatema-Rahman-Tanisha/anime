@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-3">
+    <div class="container">
+        <div class="row">
+<video width="560" height="335" controls >
+    <source src="/anime/media/{{anime.movie}}" type="video/mp4">
+</video>
+        </div>
+        <div class="row">
+              <div class="d-flex bd-highlight">
+  <div class="p-2 w-100 bd-highlight">
+ 
+  </div>
+  <div class="p-2 bd-highlight"></div>
+</div>
+ <h5 class="card-title">{{anime.name}} ({{anime.viewsNum}} views)</h5>
+ <div class="fb-like" data-href="http://127.0.0.1:8000/anime/watch/{{anime.name}}/" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
+                   <div class="card-footer text-muted">
+                   Genre : {{anime.jonra}}
+                </div>
+                
+              
+                  <p class="card-text">{{anime.details}}</p>
+           {% if request.user.is_authenticated %}    <form method="post">
+      {% csrf_token %} 
+
+      <input style="display: none;" type="text" name="slug" value="{{anime.slug}}" id="">
+      {% if anime in fav %}
+     
+      <button class="btn btn-outline-danger my-2" type="submit">remove from favourite</button>
+       {% else %}
+      <button class="btn btn-outline-dark my-2" type="submit">Add to favourite</button>
+      {% endif %}
+      <a class="btn btn-outline-dark my-2" href="/anime/watch/{{anime.slug}}/comment">Add Comment</a>
+    </form>{% endif %}
+                </div>
+              </div>
+      </div>
+</div>
+{% endblock body %}
+{% block js %}
+<script>
+
+ </script>
+{% endblock js %}
