@@ -22,6 +22,7 @@ def signup(request):
         user = User.objects.create_user(username, email, password)
         user.save()
         Favourite.objects.create(user=user)
+        return redirect('/login/')
     return render(request,"auth/signup.html")
 def log(request):
     if request.method=="POST":
@@ -30,6 +31,7 @@ def log(request):
         user = authenticate(username=user ,password=pword)
         if user is not None:
             login(request,user)
+            return redirect('/anime/')
           
         else:
             pass
