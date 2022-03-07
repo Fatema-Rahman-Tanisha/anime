@@ -55,3 +55,4 @@ urlpatterns = [
     #https://disk.yandex.ru/i/XUnAHyCBqVp6SA
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
